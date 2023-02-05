@@ -1,0 +1,63 @@
+to setup :
+npm init
+npm install express express-graphql graphql --save
+npm install mongoose --save
+
+to run :
+node app.js
+
+to query :
+1. get all movie
+{
+    getMovie {
+        id
+        movie
+        actor
+        author
+    }
+}
+
+2. get movie by id
+{
+    getMovies(id:"<id_movie>") {
+        id
+        movie
+        actor
+        author
+    }
+}
+
+3. add movie
+mutation{
+    addMovie(
+        movie: "cocomelon"
+        actor: "jeje"
+        author: "melinda"
+    ){
+        movie
+        actor
+        author
+    }
+}
+4. update movie
+mutation{
+    updateMovie(
+        id:"<id_movie>",
+        movie: "test update"
+    ){
+        id
+        movie
+        actor
+        author
+    }
+}
+5. delete movie
+mutation{
+    deleteMovie(
+        id:"<id_movie>"
+    ){
+        movie
+        actor
+        author
+    }
+}
